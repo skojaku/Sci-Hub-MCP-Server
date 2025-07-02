@@ -13,6 +13,8 @@ The Sci-Hub MCP Server provides a bridge between AI assistants and Sci-Hub's rep
 - 🔑 Paper Search by Keyword: Discover papers related to specific research areas ✅
 - 📊 Metadata Access: Retrieve detailed metadata for specific papers ✅
 - 📄 PDF Download: Download full-text PDF content when available ✅
+- 🤖 AI Paper Summarization: Generate comprehensive summaries using Google Gemini AI ✅
+- ✅ Citation Validation: Validate citations with contextual analysis ✅
 
 ## 🚀 Quick Start
 
@@ -20,6 +22,7 @@ The Sci-Hub MCP Server provides a bridge between AI assistants and Sci-Hub's rep
 
 - Python 3.10+
 - FastMCP library
+- Google Gemini API key (for summarization features)
 
 ### Installation
 
@@ -32,6 +35,11 @@ The Sci-Hub MCP Server provides a bridge between AI assistants and Sci-Hub's rep
 2. Install the required dependencies:
    ```
    pip install -r requirements.txt
+   ```
+
+3. Set up your Google Gemini API key (required for summarization features):
+   ```bash
+   export GEMINI_API_KEY="your-gemini-api-key-here"
    ```
 
 ## 📊 Usage
@@ -86,6 +94,7 @@ The Sci-Hub MCP Server provides the following tools:
 3. `search_scihub_by_keyword`: Search for papers on Sci-Hub using a keyword.
 4. `download_scihub_pdf`: Download a paper PDF from Sci-Hub.
 5. `get_paper_metadata`: Get metadata information for a paper using its DOI.
+6. `summarize_pdf_papers`: Generate AI-powered summaries of PDF papers using Google Gemini AI.
 
 ### Searching Papers by DOI
 
@@ -122,6 +131,18 @@ You can request metadata for a paper using its DOI:
 Can you show me the metadata for the paper with DOI 10.1038/nature09492?
 ```
 
+### Summarizing Papers with AI
+
+You can generate comprehensive summaries of papers using Google Gemini AI:
+```
+Can you summarize this paper PDF for me?
+```
+
+With citation validation context:
+```
+Can you summarize this paper and validate if my citation is appropriate? I cited it as: "Recent studies have shown that machine learning can improve medical diagnosis accuracy (Smith et al., 2023)."
+```
+
 ## 📁 Project Structure
 
 - `sci_hub_server.py`: The main MCP server implementation using FastMCP
@@ -134,6 +155,7 @@ Can you show me the metadata for the paper with DOI 10.1038/nature09492?
 - requests
 - bs4
 - scihub
+- google-generativeai (for AI summarization)
 
 ## 🤝 Contributing
 
